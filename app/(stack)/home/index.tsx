@@ -1,47 +1,54 @@
 import CustomButton from '@/components/shared/CustomButton';
 import { Link, router } from 'expo-router';
-import { View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const HomeScreen = () => {
   return (
-    <SafeAreaProvider>
-      <View className="px-10 mt-10">
-        <CustomButton
-          className="mb-2"
-          color="primary"
-          onPress={() => router.push("/products")}
-        >
-          Productos
-        </CustomButton>
-
-        <CustomButton
-          className="mb-2"
-          color="secondary"
-          onPress={() => router.push("/profile")}
-        >
-          Perfil
-        </CustomButton>
-
-        <CustomButton
-          className="mb-2"
-          color="tertiary"
-          onPress={() => router.push("/settings")}
-        >
-          Ajustes
-        </CustomButton>
-
-        <Link href="/products" asChild>
-          <CustomButton variant='text-only' className="mb-2">
+    <>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor="#f3f4f6"
+        translucent={false}
+      />
+      <SafeAreaProvider>
+        <View className="px-10 mt-10">
+          <CustomButton
+            className="mb-2"
+            color="primary"
+            onPress={() => router.push("/products")}
+          >
             Productos
           </CustomButton>
-        </Link>
 
-        {/* <Link className='mb-5' href='/products'>Productos</Link>
-            <Link className='mb-5' href='/profile'>Perfil</Link>
-            <Link className='mb-5' href='/settings'>Ajustes</Link> */}
-      </View>
-    </SafeAreaProvider>
+          <CustomButton
+            className="mb-2"
+            color="secondary"
+            onPress={() => router.push("/profile")}
+          >
+            Perfil
+          </CustomButton>
+
+          <CustomButton
+            className="mb-2"
+            color="tertiary"
+            onPress={() => router.push("/settings")}
+          >
+            Ajustes
+          </CustomButton>
+
+          <Link href="/products" asChild>
+            <CustomButton variant="text-only" className="mb-2">
+              Productos
+            </CustomButton>
+          </Link>
+
+          {/* <Link className='mb-5' href='/products'>Productos</Link>
+              <Link className='mb-5' href='/profile'>Perfil</Link>
+              <Link className='mb-5' href='/settings'>Ajustes</Link> */}
+        </View>
+      </SafeAreaProvider>
+    </>
   );
 }
 
