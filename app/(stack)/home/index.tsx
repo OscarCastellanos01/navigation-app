@@ -6,15 +6,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 const HomeScreen = () => {
   return (
     <SafeAreaProvider>
-      <View className="px-10 mt-5">
-        <Link href="/products" asChild>
-          <CustomButton color="primary" className="mb-10">
-            Productos
-          </CustomButton>
-        </Link>
-
+      <View className="px-10 mt-10">
         <CustomButton
-          className="mb-10"
+          className="mb-2"
           color="primary"
           onPress={() => router.push("/products")}
         >
@@ -22,12 +16,27 @@ const HomeScreen = () => {
         </CustomButton>
 
         <CustomButton
-          className="mb-10"
-          variant="text-only"
-          onPress={() => router.push("/products")}
+          className="mb-2"
+          color="secondary"
+          onPress={() => router.push("/profile")}
         >
-          Productos
+          Perfil
         </CustomButton>
+
+        <CustomButton
+          className="mb-2"
+          color="tertiary"
+          onPress={() => router.push("/settings")}
+        >
+          Ajustes
+        </CustomButton>
+
+        <Link href="/products" asChild>
+          <CustomButton variant='text-only' className="mb-2">
+            Productos
+          </CustomButton>
+        </Link>
+
         {/* <Link className='mb-5' href='/products'>Productos</Link>
             <Link className='mb-5' href='/profile'>Perfil</Link>
             <Link className='mb-5' href='/settings'>Ajustes</Link> */}
