@@ -1,7 +1,15 @@
 import CustomButton from '@/components/shared/CustomButton';
+import * as NavigationBar from "expo-navigation-bar";
 import { Link, router } from 'expo-router';
-import { StatusBar, View } from 'react-native';
+import { Platform, StatusBar, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+const isAndroid = Platform.OS === "android";
+
+if (isAndroid) {
+  NavigationBar.setBackgroundColorAsync("black");
+  NavigationBar.setVisibilityAsync("hidden");
+}
 
 const HomeScreen = () => {
   return (
