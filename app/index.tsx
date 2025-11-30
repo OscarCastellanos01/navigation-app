@@ -1,10 +1,20 @@
 import { Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const App = () => {
   return (
-    <View className='mt-10'>
-      <Text className='text-3xl font-bold text-blue-500'>Hola mundo</Text>
-    </View>
+    <SafeAreaProvider>
+      <View className='mt-6 mx-2.5'>
+        <Text 
+          style={{ fontFamily: 'WorkSans-Black' }}
+          className='text-5xl '>Hola mundo</Text>
+
+        <Text className='text-4xl font-work-black'>Hola mundo</Text>
+        <Text className='text-3xl font-work-medium'>Hola mundo</Text>
+        <Text className='text-2xl font-work-light'>Hola mundo</Text>
+        <Text className='text-xl'>Hola mundo</Text>
+      </View>
+    </SafeAreaProvider>
   );
 }
 
