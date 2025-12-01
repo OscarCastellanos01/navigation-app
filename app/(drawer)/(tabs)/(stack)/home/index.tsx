@@ -1,6 +1,7 @@
 import CustomButton from '@/components/shared/CustomButton';
+import { DrawerActions } from '@react-navigation/native';
 import * as NavigationBar from "expo-navigation-bar";
-import { Link, router } from 'expo-router';
+import { Link, router, useNavigation } from 'expo-router';
 import { Platform, StatusBar, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -12,6 +13,13 @@ if (isAndroid) {
 }
 
 const HomeScreen = () => {
+
+  const navigation = useNavigation();
+
+  const onToggleDrawer = () => {
+    navigation.dispatch( DrawerActions.toggleDrawer )
+  }
+
   return (
     <>
       <StatusBar
@@ -50,6 +58,8 @@ const HomeScreen = () => {
               Productos
             </CustomButton>
           </Link>
+
+          <CustomButton className='' onPress={onToggleDrawer}>Abrir menu</CustomButton>
 
           {/* <Link className='mb-5' href='/products'>Productos</Link>
               <Link className='mb-5' href='/profile'>Perfil</Link>

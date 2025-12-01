@@ -4,18 +4,21 @@ import React from 'react';
 
 const TabsLayout = () => {
   return (
-    <Tabs screenOptions={{ 
-        tabBarActiveTintColor: "indigo", 
-        headerShown: false,
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: "indigo",
+        // headerShown: false,
         // tabBarStyle: {
         //     backgroundColor: 'black',
         // },
         // tabBarActiveBackgroundColor: 'red'
-        // tabBarShowLabel:false 
-    }}>
+        // tabBarShowLabel:false
+      }}
+    >
       <Tabs.Screen
         name="(stack)"
         options={{
+          headerShown: false,
           title: "Stack",
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name="buysellads" color={color} />
