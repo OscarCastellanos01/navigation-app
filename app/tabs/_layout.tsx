@@ -1,0 +1,42 @@
+import { FontAwesome } from '@expo/vector-icons';
+import { Tabs } from 'expo-router';
+import React from 'react';
+
+const TabsLayout = () => {
+  return (
+    <Tabs screenOptions={{ 
+        tabBarActiveTintColor: "purple", 
+        // tabBarShowLabel:false 
+    }}>
+      <Tabs.Screen
+        name="(stack)"
+        options={{
+          title: "Stack",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="buysellads" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="home/index"
+        options={{
+          title: "Home Screen",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="home" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="favorites/index"
+        options={{
+          title: "Favorites Screen",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome size={28} name="heart-o" color={color} />
+          ),
+        }}
+      />
+    </Tabs>
+  );
+}
+
+export default TabsLayout
