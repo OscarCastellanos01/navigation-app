@@ -1,9 +1,11 @@
+import CustomDrawer from '@/components/shared/CustomDrawer';
 import { Ionicons } from '@expo/vector-icons';
 import { Drawer } from 'expo-router/drawer';
 
 const DrawerLayout = () => {
   return (
     <Drawer
+        drawerContent={ CustomDrawer }
       screenOptions={{
         overlayColor: "rgba(0,0,0,0.4)",
         drawerActiveTintColor: "indigo",
