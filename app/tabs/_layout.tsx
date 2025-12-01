@@ -5,7 +5,12 @@ import React from 'react';
 const TabsLayout = () => {
   return (
     <Tabs screenOptions={{ 
-        tabBarActiveTintColor: "purple", 
+        tabBarActiveTintColor: "indigo", 
+        headerShown: false,
+        // tabBarStyle: {
+        //     backgroundColor: 'black',
+        // },
+        // tabBarActiveBackgroundColor: 'red'
         // tabBarShowLabel:false 
     }}>
       <Tabs.Screen
